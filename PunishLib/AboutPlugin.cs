@@ -21,13 +21,17 @@ namespace PunishLib
         {
             ImGuiEx.ImGuiLineCentered("AboutHeader", delegate
             {
-                ImGuiEx.Text($"Published and developed with ");
+                ImGuiEx.Text($"由 ");
                 ImGui.PushFont(UiBuilder.IconFont);
                 ImGui.SameLine(0, 0);
                 ImGuiEx.Text(ImGuiColors.DalamudRed, FontAwesomeIcon.Heart.ToIconString());
                 ImGui.PopFont();
                 ImGui.SameLine(0, 0);
-                ImGuiEx.Text($" by Puni.sh");
+                ImGuiEx.Text($" Puni.sh 发布和开发");
+                ImGuiEx.ImGuiLineCentered("AboutHeader", delegate 
+                {
+                    ImGuiEx.Text($"mokeling(墨キジ)本地化");
+                });
             });
         }
 

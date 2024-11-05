@@ -68,7 +68,7 @@ namespace PunishLib.ImGuiMethods
                     GenericHelpers.ShellStart("https://discord.gg/Zzrcc8kmvy");
                 }
                 ImGui.SameLine();*/
-                ImGui.TextWrapped("Join our Discord community for project announcements, updates, and support.");
+                ImGui.TextWrapped("加入我们的 Discord 社区，获取项目公告、更新和支持。");
             });
             ImGuiEx.ImGuiLineCentered("About4", delegate
             {
@@ -81,10 +81,10 @@ namespace PunishLib.ImGuiMethods
                     });
                 }
                 ImGui.SameLine();
-                if (ImGui.Button("Repository"))
+                if (ImGui.Button("插件仓库"))
                 {
                     ImGui.SetClipboardText("https://love.puni.sh/ment.json");
-                    Notify.Success("Link copied to clipboard");
+                    Notify.Success("链接已复制到剪贴板");
                 }
                 if (PunishLibMain.PluginManifest.RepoUrl != null)
                 {
@@ -101,7 +101,7 @@ namespace PunishLib.ImGuiMethods
                 if (PunishLibMain.About.Sponsor != null)
                 {
                     ImGui.SameLine();
-                    if (ImGui.Button("Sponsor"))
+                    if (ImGui.Button("赞助"))
                     {
                         Process.Start(new ProcessStartInfo()
                         {
@@ -132,19 +132,19 @@ namespace PunishLib.ImGuiMethods
                 {
                     ImGuiHelpers.ForceNextWindowMainViewport();
                     ImGui.SetNextWindowSize(new System.Numerics.Vector2(200, 300), ImGuiCond.Once);
-                    ImGui.Begin($"Puni.sh API Key Settings", ref openApiSettings, ImGuiWindowFlags.AlwaysAutoResize);
-                    ImGui.Text("API Key");
+                    ImGui.Begin($"Puni.sh API 密钥设置", ref openApiSettings, ImGuiWindowFlags.AlwaysAutoResize);
+                    ImGui.Text("API 密钥");
                     if (showKeyError)
-                        ImGuiEx.Text(ImGuiColors.DalamudRed, "ERROR - Invalid API Key");
+                        ImGuiEx.Text(ImGuiColors.DalamudRed, "错误 - 无效的 API 密钥");
 
                     if (showSuccess)
-                        ImGuiEx.Text(ImGuiColors.HealerGreen, "Success - Your key has been saved.");
+                        ImGuiEx.Text(ImGuiColors.HealerGreen, "成功 - 你的密钥已保存。");
 
                     if (apiTestSuccess)
-                        ImGuiEx.Text(ImGuiColors.HealerGreen, "Success - You have a valid API key.");
+                        ImGuiEx.Text(ImGuiColors.HealerGreen, "成功 - 你已有一个有效的 API 密钥。");
 
                     if (apiTestFail)
-                        ImGuiEx.Text(ImGuiColors.DalamudRed, "ERROR - Your API key is invalid.");
+                        ImGuiEx.Text(ImGuiColors.DalamudRed, "错误 - 你的 API 密钥无效。");
 
                     ImGui.PushItemWidth(300);
                     if (ImGui.InputText("", ref _inputKey, 100))
